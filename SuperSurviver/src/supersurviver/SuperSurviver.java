@@ -5,10 +5,14 @@
  */
 package supersurviver;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author tonyh
  */
+
+
 public class SuperSurviver {
 
     /**
@@ -20,5 +24,9 @@ public class SuperSurviver {
         //second edit
         //third edit
     }
+    public SuperSurviver(){
+       
+}
+}
     
 }
