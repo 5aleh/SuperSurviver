@@ -70,13 +70,7 @@ public class MenuPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
-        this.setVisible(false);
-        JFrameAS jframe = new JFrameAS();
-        MainPanel mainPan = new MainPanel();
-        jframe.add(mainPan);
-        mainPan.setBackground(Color.LIGHT_GRAY);
-        mainPan.setSize(this.getWidth(), this.getHeight());
-        mainPan.setVisible(true);
+        this.setVisible(false);       
     }//GEN-LAST:event_btnPlayActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed

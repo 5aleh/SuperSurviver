@@ -22,9 +22,14 @@ public class JFrameAS extends javax.swing.JFrame {
         MenuPanel myMenu = new MenuPanel();
         
         this.add(myMenu);
-        myMenu.setBackground(Color.LIGHT_GRAY);
+        myMenu.setBackground(Color.BLACK);
         myMenu.setSize(this.getWidth(), this.getHeight());
       
+        
+        MainPanel myMainPan = new MainPanel();
+        this.add(myMainPan);
+        myMainPan.setBackground(Color.BLACK);
+        myMainPan.setSize(this.getWidth(), this.getHeight());
     }
 
     /**
