@@ -5,6 +5,9 @@
  */
 package supersurviver;
 
+import java.awt.Color;
+import java.awt.Container;
+
 /**
  *
  * @author tonyh
@@ -16,6 +19,12 @@ public class JFrameAS extends javax.swing.JFrame {
      */
     public JFrameAS() {
         initComponents();
+        MenuPanel myMenu = new MenuPanel();
+        
+        this.add(myMenu);
+        myMenu.setBackground(Color.LIGHT_GRAY);
+        myMenu.setSize(this.getWidth(), this.getHeight());
+      
     }
 
     /**
