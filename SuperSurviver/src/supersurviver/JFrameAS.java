@@ -19,17 +19,18 @@ public class JFrameAS extends javax.swing.JFrame {
      */
     public JFrameAS() {
         initComponents();
-        MenuPanel myMenu = new MenuPanel();
+        MenuPanel myMenu = new MenuPanel(this);
         
         this.add(myMenu);
         myMenu.setBackground(Color.BLACK);
         myMenu.setSize(this.getWidth(), this.getHeight());
       
         
-        MainPanel myMainPan = new MainPanel();
+        
+       /* MainPanel myMainPan = new MainPanel();
         this.add(myMainPan);
         myMainPan.setBackground(Color.BLACK);
-        myMainPan.setSize(this.getWidth(), this.getHeight());
+        myMainPan.setSize(this.getWidth(), this.getHeight());*/
     }
 
     /**

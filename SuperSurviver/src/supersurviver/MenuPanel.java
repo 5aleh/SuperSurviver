@@ -16,9 +16,12 @@ public class MenuPanel extends javax.swing.JPanel {
     /**
      * Creates new form MenuPanel
      */
-    public MenuPanel() {
+    
+    JFrameAS jFrame;
+    public MenuPanel(JFrameAS jframe) {
         initComponents();
         this.setVisible(true);
+        this.jFrame = jframe;
     }
 
     /**
@@ -70,7 +73,13 @@ public class MenuPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
-        this.setVisible(false);       
+          MainPanel myMainPan = new MainPanel();
+        jFrame.remove(this);
+        jFrame.add(myMainPan);
+        jFrame.validate();
+        jFrame.repaint();
+        myMainPan.setBackground(Color.BLACK);
+        myMainPan.setSize(jFrame.getWidth(), jFrame.getHeight());      
     }//GEN-LAST:event_btnPlayActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
