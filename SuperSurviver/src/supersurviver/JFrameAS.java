@@ -10,6 +10,7 @@ import java.awt.Toolkit;
 
 public class JFrameAS extends javax.swing.JFrame {
 
+    MenuPanel myMenu;
     
     public JFrameAS() {
         initComponents();
@@ -22,12 +23,12 @@ public class JFrameAS extends javax.swing.JFrame {
         int y = (int) ((screen.getHeight() -getHeight()) /2);
         setLocation(x, y); 
        
-        MenuPanel myMenu = new MenuPanel(this);
+        myMenu = new MenuPanel(this);
         this.add(myMenu);
-        this.pack();
+        
         myMenu.setBackground(Color.gray);
         myMenu.setSize(this.getWidth() - 20, this.getHeight() - 50);
-        
+        this.pack();
     }
 
     
@@ -36,20 +37,20 @@ public class JFrameAS extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
+            }
+        });
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        // TODO add your handling code here:
+        this.myMenu.setSize(this.getWidth(), this.getHeight());
+        
+    }//GEN-LAST:event_formComponentResized
 
     
     public static void main(String args[]) {

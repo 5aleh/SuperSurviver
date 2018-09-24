@@ -15,6 +15,7 @@ public class MenuPanel extends javax.swing.JPanel {
         this.setVisible(true);
 
         this.jFrame = jframe;
+        
     }
     
     //Draws the Title of the Game 'SuperSurvivor'
@@ -39,12 +40,17 @@ public class MenuPanel extends javax.swing.JPanel {
         btnPlay = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
 
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
+            }
+        });
+
         btnPlay.setBackground(new java.awt.Color(0, 0, 0));
         btnPlay.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 36)); // NOI18N
         btnPlay.setForeground(new java.awt.Color(118, 215, 196));
         btnPlay.setText("PLAY");
         btnPlay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnPlay.setMinimumSize(new java.awt.Dimension(113, 57));
         btnPlay.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         btnPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,7 +80,7 @@ public class MenuPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(95, 95, 95)
-                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPlay)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                 .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -98,6 +104,10 @@ public class MenuPanel extends javax.swing.JPanel {
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         System.exit(0); //exit
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        jFrame.myMenu.setSize(this.getWidth(), this.getHeight());
+    }//GEN-LAST:event_formComponentResized
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
