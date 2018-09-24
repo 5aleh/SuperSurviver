@@ -1,3 +1,4 @@
+//This java class is the beginning of the story until the Cabin in the Woods
 package supersurviver;
 
 import java.awt.Color;
@@ -10,11 +11,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
-
-/**
- *
- * @author tonyh
- */
 public class BeginningStoryPanel extends javax.swing.JPanel {
     JFrameAS jFrame;
     
@@ -41,11 +37,11 @@ public class BeginningStoryPanel extends javax.swing.JPanel {
         //9-10 Woods story
         listStory.add("After walking for some time, you hear steps somewhere in front of you. But the path in front of you is blocked.");
         listStory.add("What do you do?");
-        //11-13 SECOND options
+        //11-13 SECOND options //13 Death Scene
         listStory.add("You walked back");
         listStory.add("You quickly dropped and hid in a bush");
         listStory.add("You yelled who's there?!");
-        //14 
+        //14 continue story
         listStory.add("Quite some time after, you see it was just a squirrel");
         //15-19 FIREPLACE story
         listStory.add("You venture on continuing your march deeper into the woods hoping to find someone. Something.");
@@ -237,6 +233,13 @@ public class BeginningStoryPanel extends javax.swing.JPanel {
                 txtStory.setText(listStory.get(clickedNext));
             }else if((clickedNext >= 9 && clickedNext <=10) || (clickedNext >=14 && clickedNext <= 19)){
                 txtStory.setText(listStory.get(clickedNext));
+            }else if(addClicked == 12){
+                txtStory.setText("Few minutes later you got bit by a venomous snake. \n You died. \n\n Click to replay scene");
+                txtOfOptions.setText("You Died");
+                txtOfOptions.setVisible(true);
+                clickedNext = 8;
+                addClicked = clickedNext;
+                
             }else{
                 check = true;
             }
@@ -284,6 +287,7 @@ public class BeginningStoryPanel extends javax.swing.JPanel {
             txtOfOptions.setText("You Hid");
             txtOfOptions.setVisible(true);
             txtStory.setText(listStory.get(12));
+            addClicked = 12;
         }else if(addClicked == 19){
             intOptions = 7;
             txtOfOptions.setText(":]");

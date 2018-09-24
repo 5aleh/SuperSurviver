@@ -1,4 +1,4 @@
-
+//This class is for the start menu of the game
 package supersurviver;
 
 import java.awt.Color;
@@ -7,9 +7,6 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 
-/**
- * @author tonyh
- */
 public class MenuPanel extends javax.swing.JPanel {
     
     JFrameAS jFrame; 

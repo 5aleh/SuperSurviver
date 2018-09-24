@@ -1,3 +1,4 @@
+//This java class is for the end of the story
 package supersurviver;
 
 import java.awt.Color;

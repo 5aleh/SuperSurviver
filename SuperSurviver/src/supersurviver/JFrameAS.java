@@ -1,3 +1,4 @@
+//This java class is the base/start of the game
 
 package supersurviver;
 
@@ -7,15 +8,13 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Toolkit;
 
-/**
- *
- * @author tonyh
- */
 public class JFrameAS extends javax.swing.JFrame {
 
     
     public JFrameAS() {
         initComponents();
+        
+        //this.setPreferredSize(new Dimension(700, 500));
         
         //Center the Window
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -28,6 +27,7 @@ public class JFrameAS extends javax.swing.JFrame {
         this.pack();
         myMenu.setBackground(Color.gray);
         myMenu.setSize(this.getWidth() - 20, this.getHeight() - 50);
+        
     }
 
     
