@@ -11,48 +11,57 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 
-/**
- *
- * @author tonyh
- */
-public class BeginningStoryPanel extends javax.swing.JPanel {
+public class CabinPanel extends javax.swing.JPanel {
     JFrameAS jFrame;
     
-    private int intOptions = 0; //Counter for User button choices (rarely used)
+    BufferedImage img;
     private int clickedNext = 0; //Counter for user clicks on the TextArea of Story
     private int addClicked = 0; //2nd Counter of clickedNext to help //might have not needed this counter
-    private boolean check = false, intoWoods = false; //boolean values
+    private boolean check = false, alterCabin = false; //boolean values
     
     private ArrayList<String> listStory = new ArrayList<String>(); //Array list to store Story in String format
     
     //Method that contains the strings of the story in ArrayList format
     private void Story(){
-        //The start of the story
-        listStory.add("You have been stressed for quite some time now because you got a lot going on");
-        listStory.add("You've decided to go on a drive to take your mind off of things");
-        listStory.add("3 hours later . . .");
-        listStory.add("You're still driving but you notice something is not right.");
-        listStory.add("*Your car starts to breakdown*");
-        listStory.add("You got out of the car and you have no idea where you are");
-        //Queue FIRST options after 0-5. //6-8 are OPTIONS
-        listStory.add("Your Phone has no signal");
-        listStory.add("You waited but no one is in sight");
-        listStory.add("Went into woods");
-        //9-10 Woods story
-        listStory.add("After walking for some time, you hear steps somewhere in front of you. But the path in front of you is blocked.");
-        listStory.add("What do you do?");
-        //11-13 SECOND options
-        listStory.add("You walked back");
-        listStory.add("You quickly dropped and hid in a bush");
-        listStory.add("You yelled who's there?!");
-        //14 
-        listStory.add("Quite some time after, you see it was just a squirrel");
-        //15-19 FIREPLACE story
-        listStory.add("You venture on continuing your march deeper into the woods hoping to find someone. Something.");
-        listStory.add("While walking around for some time, you stumbled upon an unexpected fireplace.");
-        listStory.add("You searched around and the first thing that caught your attention was a folded piece of paper.");
-        listStory.add("You opened it and it barely was legible. . .");
-        listStory.add("Your choice");
+        //The start of the story 0-1
+        listStory.add("As you continue through the woods, you see a dim light far infront of you");
+        listStory.add("You approach the light and come to a cabin");
+        //After first Set of options 2-4
+        listStory.add("Is anyone there?");
+        listStory.add("You enter cabin");
+        listStory.add("You start searching...");
+        //Inside cabin story - angry oldman version 5-6
+        listStory.add("You open the door and see an angry old man holding a shotgun");
+        listStory.add("You get shot!");
+        //Search Story 7-12
+        listStory.add("You decide to search around the cabin for any clues to leave the woods, with the spooky message still in mind");
+        listStory.add("As you search, you hear a wolf howl, leading you to step on a branch");
+        listStory.add("You stop for a moment.....");
+        listStory.add("......nothing happens, and you continue your search");
+        listStory.add("To your surpise, you see a car at the back of the house");
+        listStory.add("You want to steal the car to escape, but you first need to find the keys");
+        //After second set of options 13-14
+        listStory.add("You enter Cabin");
+        listStory.add("You continue Searching");
+        //Inside cabin story - sleeping oldman version 15-17
+        listStory.add("You open the door and immediately see an old man sleeping on a couch with a shotgun beside him");
+        listStory.add("You look to your left and see car keys on a table");
+        listStory.add("You wonder if you should wake up the old man to ask for directions out of the woods");
+        //After third set of options 18-19
+        listStory.add("Old man wakes up");
+        listStory.add("You grab keys and leave");
+        //Exit cabin story - skipped initial search 20-22
+        listStory.add("You hastily search around the house in hopes of finding the car to use the keys on");
+        listStory.add("By the stroke of luck you see the car at the back of the house");
+        listStory.add("You hear the cabin door open and hear footsteps");
+        //After alternative choices 23
+        listStory.add("You wait and see");
+        //Finale 24-28
+        listStory.add("With the keys in hand, you quickly start the car and drive out the woods");
+        listStory.add("You drive far out away for things to be peaceful again");
+        listStory.add(".......Or so you thought");
+        listStory.add("The story continues.....");
+        listStory.add("In Super Survivor II");
     }
     
     //Set options to be unviewable
@@ -71,25 +80,27 @@ public class BeginningStoryPanel extends javax.swing.JPanel {
     
     //Set the text of the option buttons
     private void MakeOptions(){
-        if(addClicked == 6){
-            firstOption.setText("Check Phone");
-            secondOption.setText("Go to Woods");
-            thirdOption.setText("Wait for Help");
-        }else if(addClicked == 11){
-            firstOption.setText("Go Back");
-            secondOption.setText("Hide");
-            thirdOption.setText("Yell 'Who's there'");
-        }else if(addClicked == 19){
-            firstOption.setText("Leave woods");
-            secondOption.setText("Venture on");
+        if(addClicked == 2){
+            firstOption.setText("Yell, \"Is anyone there?\"");
+            secondOption.setText("Enter cabin");
+            thirdOption.setText("Search around");
+        }else if(addClicked == 13){
+            firstOption.setText("Enter cabin");
+            secondOption.setText("Continue searching");
+            thirdOption.setVisible(false);
+        }else if(addClicked == 18){
+            firstOption.setText("Wake up old man");
+            secondOption.setText("Grab keys and leave");
+            thirdOption.setVisible(false);
+        }else if(addClicked == 23) {
+            firstOption.setText("Wait and see");
+            secondOption.setText("Start car and leave");
             thirdOption.setVisible(false);
         }
     }
     
-    BufferedImage img;
-    
     //Constructor to initialize stuff
-    public BeginningStoryPanel(JFrameAS jframe) {
+    public CabinPanel(JFrameAS jframe) {
         initComponents();
         this.jFrame = jframe;
         
@@ -103,17 +114,9 @@ public class BeginningStoryPanel extends javax.swing.JPanel {
         }
         
         MakeOptFalse();
-        
-        //A quick tip for first time Users
-        if(clickedNext == 0){
-            txtOfOptions.setVisible(true);
-            txtOfOptions.setText("*TIP: Click the box of the story to continue.");
-        }else{
-            txtOfOptions.setVisible(false); 
-        }
-        
+       
         try {
-            img = ImageIO.read(new File("Images\\roadimg.jpg"));
+            img = ImageIO.read(new File("Images\\cabinimg1.jpg"));
         } catch (IOException ex) {
             Logger.getLogger(CabinPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -220,47 +223,43 @@ public class BeginningStoryPanel extends javax.swing.JPanel {
         check = false; //reset so it won't keep going into else if statements
         
         //Stop to make choice for User in a certain amount of clicks from textArea (story)
-        if (addClicked == 6 || addClicked == 11 || addClicked == 19){
+        if (addClicked == 2 || addClicked == 13 || addClicked == 18 || addClicked == 23){
             check = true;
             clickedNext = addClicked;
-        }else if(addClicked == 17){
-            txtOfOptions.setText("134v3");
-            txtOfOptions.setVisible(true);
-            MakeOptFalse();
         }
         
         //Continute on Story
         if(check == false){
             clickedNext++;
             addClicked = clickedNext;
-            if(clickedNext <= 5){
+            if(clickedNext <= 1 || (clickedNext >= 7 && clickedNext <=12) || (clickedNext >=15 && clickedNext <= 17) || (clickedNext >=20 && clickedNext <= 22) || clickedNext >=24){
                 txtStory.setText(listStory.get(clickedNext));
-            }else if((clickedNext >= 9 && clickedNext <=10) || (clickedNext >=14 && clickedNext <= 19)){
-                txtStory.setText(listStory.get(clickedNext));
-            }else{
+            }else if(clickedNext >= 5 && clickedNext <=6){
+                if (clickedNext == 6) {
+                    txtStory.setText("The old man kills you!\n\nClick to replay scene");
+                    clickedNext = 1;
+                    addClicked = clickedNext;
+                }
+            }
+            
+            else{
                 check = true;
             }
-        }else if(intoWoods == true){
+        }else if(alterCabin == true){
             check = false;
-            clickedNext = 9;
+            clickedNext = 5;
             addClicked = clickedNext;
             txtStory.setText(listStory.get(clickedNext));
             MakeOptFalse();
-        }else if(intOptions == 3){
-            check = false;
-            clickedNext = 14;
-            addClicked = clickedNext;
-            txtStory.setText(listStory.get(clickedNext));
         }
      
         //Get the Choices for the User
         if(check == true){
-            intoWoods = false;
+            alterCabin = false;
             MakeOptTrue();
             MakeOptions();
             
         }
-        intOptions = 0; //reset so it won't keep going into else if statements
         System.out.print(" " + addClicked + " CHECK: " + check);
         
     }//GEN-LAST:event_txtStoryMouseClicked
@@ -272,34 +271,42 @@ public class BeginningStoryPanel extends javax.swing.JPanel {
     
     //Second User choice button
     private void secondOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_secondOptionActionPerformed
-        if(addClicked == 6){
-            intoWoods = true;
+        if(addClicked == 2){
 
-            txtOfOptions.setText("WENT INTO WOODS");
+            txtOfOptions.setText("Entered the cabin!");
             txtOfOptions.setVisible(true);
-
-            txtStory.setText(listStory.get(8));
+            txtStory.setText(listStory.get(3));
+            clickedNext = 14;
+            addClicked = clickedNext;
             
-        }else if(addClicked == 11){
-            txtOfOptions.setText("You Hid");
+        }else if(addClicked == 13){
+            txtOfOptions.setText("Searching...\n\nNothing found");
             txtOfOptions.setVisible(true);
-            txtStory.setText(listStory.get(12));
-        }else if(addClicked == 19){
-            intOptions = 7;
-            txtOfOptions.setText(":]");
+            txtStory.setText(listStory.get(14));
+        }else if(addClicked == 18){
+//            intOptions = 7;
+            txtOfOptions.setText("You grab key and leave");
             txtOfOptions.setVisible(true);
-            txtStory.setText("You continued on.");
+            txtStory.setText(listStory.get(19));
+            clickedNext = 19;
+            addClicked = clickedNext;
             
-            //Saleh's Panel goes here
-            CabinPanel begPan = new CabinPanel(jFrame);
-            jFrame.remove(this);
-            begPan.setVisible(false);
-            jFrame.add(begPan);
-            jFrame.validate();
-            jFrame.repaint();
-            begPan.setBackground(Color.white);
-            begPan.setSize(jFrame.getWidth() - 20, jFrame.getHeight() - 50);   
-            begPan.setVisible(true);
+//            //Saleh's Panel goes here
+//            BeginningStoryPanel begPan = new BeginningStoryPanel(jFrame);
+//            jFrame.remove(this);
+//            begPan.setVisible(false);
+//            jFrame.add(begPan);
+//            jFrame.validate();
+//            jFrame.repaint();
+//            begPan.setBackground(Color.white);
+//            begPan.setSize(jFrame.getWidth() - 20, jFrame.getHeight() - 50);   
+//            begPan.setVisible(true);
+        }else if(addClicked == 23) {
+            txtOfOptions.setText("Car starting...");
+            txtOfOptions.setVisible(true);
+            txtStory.setText(listStory.get(24));
+            clickedNext = 24;
+            addClicked = clickedNext;
         }
         MakeOptFalse();
     }//GEN-LAST:event_secondOptionActionPerformed
@@ -307,19 +314,43 @@ public class BeginningStoryPanel extends javax.swing.JPanel {
     
     //First User choice button
     private void firstOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstOptionActionPerformed
-        if(addClicked == 6){
-            txtOfOptions.setText("CHECKED PHONE");
+        if(addClicked == 2){
+            alterCabin = true;
+            txtOfOptions.setText("IS ANYONE THERE!!!!");
             txtOfOptions.setVisible(true);
-            txtStory.setText(listStory.get(6));
-        }else if(addClicked == 11){
-            txtOfOptions.setText("Walked back");
+            txtStory.setText(listStory.get(2));
+        }else if(addClicked == 13){
+            txtOfOptions.setText("Cabin entered");
             txtOfOptions.setVisible(true);
-            txtStory.setText(listStory.get(11));
-            addClicked = 6;
-        }else if(addClicked == 19){
-            txtOfOptions.setText("Try Again.");
+            txtStory.setText(listStory.get(13));
+            clickedNext = 14;
+            addClicked = clickedNext;
+        }else if(addClicked == 18){
             txtOfOptions.setVisible(true);
-            txtStory.setText("You tried to leave, but you are lost");
+            txtOfOptions.setText("Old man woken up");
+            txtStory.setText(listStory.get(18));
+            try {
+                Thread.sleep(1000);
+                txtStory.setText("He kills you\n\nClick to Replay scene......");
+            } catch (InterruptedException ex) {
+                Logger.getLogger(CabinPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            clickedNext = 15;
+            addClicked = clickedNext;
+            
+            
+        }else if (addClicked == 23) {
+            txtOfOptions.setText("Waiting...");
+            txtOfOptions.setVisible(true);
+            txtStory.setText(listStory.get(23));
+            try {
+                Thread.sleep(1000);
+                txtStory.setText("Suddenly the old man appears with a shotgon and kills you!\n\nClick to replay scene");
+            } catch (InterruptedException ex) {
+                Logger.getLogger(CabinPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            clickedNext = 21;
+            addClicked = clickedNext;
         }
         MakeOptFalse();
     }//GEN-LAST:event_firstOptionActionPerformed
@@ -327,15 +358,12 @@ public class BeginningStoryPanel extends javax.swing.JPanel {
     
     //Third User choice button
     private void thirdOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thirdOptionActionPerformed
-        if(addClicked == 6){
-            txtOfOptions.setText("WAITED FOR HELP");
+        if(addClicked == 2){
+            txtOfOptions.setText("Searching...");
             txtOfOptions.setVisible(true);
-            txtStory.setText(listStory.get(7));
-        }else if(addClicked == 11){
-            intOptions = 3;
-            txtOfOptions.setText("Yelled");
-            txtOfOptions.setVisible(true);
-            txtStory.setText(listStory.get(13));
+            txtStory.setText(listStory.get(4));
+            clickedNext = 6;
+            addClicked = clickedNext;
         }
         MakeOptFalse();
     }//GEN-LAST:event_thirdOptionActionPerformed
