@@ -287,6 +287,14 @@ public class BeginningStoryPanel extends javax.swing.JPanel {
             if(clickedNext <= 5){
                 txtStory.setText(listStory.get(clickedNext));
             }else if((clickedNext >= 9 && clickedNext <=10) || (clickedNext >=14 && clickedNext <= 19)){
+                if(clickedNext == 15) {
+                    try {
+                        img = ImageIO.read(new File("Images\\campfireimg.jpg"));
+                        this.repaint();
+                    } catch (IOException ex) {
+                        Logger.getLogger(CabinPanel.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                 txtStory.setText(listStory.get(clickedNext));
             }else if(addClicked == 12){
                 txtStory.setText("Few minutes later you got bit by a venomous snake. \n You died. \n\n Click to replay scene");
@@ -332,7 +340,12 @@ public class BeginningStoryPanel extends javax.swing.JPanel {
     private void secondOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_secondOptionActionPerformed
         if(addClicked == 6){
             intoWoods = true;
-
+            try {
+            img = ImageIO.read(new File("Images\\forestimg.jpg"));
+            this.repaint();
+            } catch (IOException ex) {
+                Logger.getLogger(CabinPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
             txtOfOptions.setText("WENT INTO WOODS");
             txtOfOptions.setVisible(true);
 

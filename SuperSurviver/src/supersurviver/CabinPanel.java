@@ -130,12 +130,111 @@ public class CabinPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        topPanel = new javax.swing.JPanel();
+        txtOfOptions = new javax.swing.JTextField();
+        storyPanel = new javax.swing.JPanel();
+        optionsPanel = new javax.swing.JPanel();
+        thirdOption = new javax.swing.JButton();
+        secondOption = new javax.swing.JButton();
+        firstOption = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtStory = new javax.swing.JTextArea();
-        txtOfOptions = new javax.swing.JTextField();
-        firstOption = new javax.swing.JButton();
-        secondOption = new javax.swing.JButton();
-        thirdOption = new javax.swing.JButton();
+
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
+            }
+        });
+
+        topPanel.setOpaque(false);
+
+        txtOfOptions.setEditable(false);
+        txtOfOptions.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtOfOptions.setText("empty");
+        txtOfOptions.setOpaque(false);
+        txtOfOptions.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtOfOptionsActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
+        topPanel.setLayout(topPanelLayout);
+        topPanelLayout.setHorizontalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtOfOptions)
+                .addContainerGap())
+        );
+        topPanelLayout.setVerticalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtOfOptions, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+        );
+
+        storyPanel.setOpaque(false);
+
+        optionsPanel.setOpaque(false);
+
+        thirdOption.setText("third");
+        thirdOption.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                thirdOptionActionPerformed(evt);
+            }
+        });
+
+        secondOption.setText("second");
+        secondOption.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                secondOptionActionPerformed(evt);
+            }
+        });
+
+        firstOption.setText("first");
+        firstOption.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstOptionActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout optionsPanelLayout = new javax.swing.GroupLayout(optionsPanel);
+        optionsPanel.setLayout(optionsPanelLayout);
+        optionsPanelLayout.setHorizontalGroup(
+            optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(optionsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(firstOption, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                .addGap(63, 63, 63)
+                .addComponent(secondOption, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                .addGap(45, 45, 45)
+                .addComponent(thirdOption, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                .addGap(29, 29, 29))
+        );
+        optionsPanelLayout.setVerticalGroup(
+            optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(optionsPanelLayout.createSequentialGroup()
+                .addGroup(optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(secondOption, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(thirdOption, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(optionsPanelLayout.createSequentialGroup()
+                .addComponent(firstOption, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout storyPanelLayout = new javax.swing.GroupLayout(storyPanel);
+        storyPanel.setLayout(storyPanelLayout);
+        storyPanelLayout.setHorizontalGroup(
+            storyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(optionsPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        storyPanelLayout.setVerticalGroup(
+            storyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, storyPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(optionsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         txtStory.setEditable(false);
         txtStory.setColumns(20);
@@ -151,119 +250,31 @@ public class CabinPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(txtStory);
 
-        txtOfOptions.setEditable(false);
-        txtOfOptions.setText("empty");
-        txtOfOptions.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtOfOptionsActionPerformed(evt);
-            }
-        });
-
-        firstOption.setText("first");
-        firstOption.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstOptionActionPerformed(evt);
-            }
-        });
-
-        secondOption.setText("jButton1");
-        secondOption.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                secondOptionActionPerformed(evt);
-            }
-        });
-
-        thirdOption.setText("jButton1");
-        thirdOption.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                thirdOptionActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(topPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addComponent(storyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(txtOfOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(firstOption, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(secondOption, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(thirdOption, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(txtOfOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(firstOption, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(thirdOption, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(secondOption, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(topPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addComponent(storyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtStoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtStoryMouseClicked
-        txtOfOptions.setVisible(false); 
-        check = false; //reset so it won't keep going into else if statements
-        
-        //Stop to make choice for User in a certain amount of clicks from textArea (story)
-        if (addClicked == 2 || addClicked == 13 || addClicked == 18 || addClicked == 23){
-            check = true;
-            clickedNext = addClicked;
-        }
-        
-        //Continute on Story
-        if(check == false){
-            clickedNext++;
-            addClicked = clickedNext;
-            if(clickedNext <= 1 || (clickedNext >= 7 && clickedNext <=12) || (clickedNext >=15 && clickedNext <= 17) || (clickedNext >=20 && clickedNext <= 22) || clickedNext >=24){
-                txtStory.setText(listStory.get(clickedNext));
-            }else if(clickedNext >= 5 && clickedNext <=6){
-                if (clickedNext == 6) {
-                    txtStory.setText("The old man kills you!\n\nClick to replay scene");
-                    clickedNext = 1;
-                    addClicked = clickedNext;
-                }
-            }
-            
-            else{
-                check = true;
-            }
-        }else if(alterCabin == true){
-            check = false;
-            clickedNext = 5;
-            addClicked = clickedNext;
-            txtStory.setText(listStory.get(clickedNext));
-            MakeOptFalse();
-        }
-     
-        //Get the Choices for the User
-        if(check == true){
-            alterCabin = false;
-            MakeOptTrue();
-            MakeOptions();
-            
-        }
-        System.out.print(" " + addClicked + " CHECK: " + check);
-        
-    }//GEN-LAST:event_txtStoryMouseClicked
 
     private void txtOfOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOfOptionsActionPerformed
         //empty
@@ -285,23 +296,12 @@ public class CabinPanel extends javax.swing.JPanel {
             txtOfOptions.setVisible(true);
             txtStory.setText(listStory.get(14));
         }else if(addClicked == 18){
-//            intOptions = 7;
             txtOfOptions.setText("You grab key and leave");
             txtOfOptions.setVisible(true);
             txtStory.setText(listStory.get(19));
             clickedNext = 19;
             addClicked = clickedNext;
             
-//            //Saleh's Panel goes here
-//            BeginningStoryPanel begPan = new BeginningStoryPanel(jFrame);
-//            jFrame.remove(this);
-//            begPan.setVisible(false);
-//            jFrame.add(begPan);
-//            jFrame.validate();
-//            jFrame.repaint();
-//            begPan.setBackground(Color.white);
-//            begPan.setSize(jFrame.getWidth() - 20, jFrame.getHeight() - 50);   
-//            begPan.setVisible(true);
         }else if(addClicked == 23) {
             txtOfOptions.setText("Car starting...");
             txtOfOptions.setVisible(true);
@@ -369,17 +369,88 @@ public class CabinPanel extends javax.swing.JPanel {
         MakeOptFalse();
     }//GEN-LAST:event_thirdOptionActionPerformed
 
-    @Override
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        // TODO add your handling code here:
+        this.setSize(jFrame.getWidth(), jFrame.getHeight());
+    }//GEN-LAST:event_formComponentResized
+
+    private void txtStoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtStoryMouseClicked
+        txtOfOptions.setVisible(false);
+        check = false; //reset so it won't keep going into else if statements
+
+        //Stop to make choice for User in a certain amount of clicks from textArea (story)
+        if (addClicked == 2 || addClicked == 13 || addClicked == 18 || addClicked == 23){
+            check = true;
+            clickedNext = addClicked;
+        }
+
+        //Continute on Story
+        if(check == false){
+            clickedNext++;
+            addClicked = clickedNext;
+            if(clickedNext <= 1 || (clickedNext >= 7 && clickedNext <=12) || (clickedNext >=15 && clickedNext <= 17) || (clickedNext >=20 && clickedNext <= 22) || clickedNext >=24){
+                txtStory.setText(listStory.get(clickedNext));
+                if (clickedNext == 28) {
+                    WinPanel winPan = new WinPanel(jFrame);
+                    jFrame.remove(this);
+                    winPan.setVisible(false);
+                    jFrame.add(winPan);
+                    jFrame.validate();
+                    jFrame.repaint();
+                    winPan.setBackground(Color.white);
+                    winPan.setSize(jFrame.getWidth() - 20, jFrame.getHeight() - 50);
+                    winPan.setVisible(true);
+                }
+            }else if(clickedNext >= 5 && clickedNext <=6){
+                if (clickedNext == 6) {
+                    txtStory.setText("The old man kills you!\n\nClick to replay scene");
+                    clickedNext = 1;
+                    addClicked = clickedNext;
+                }
+            }
+
+            else{
+                check = true;
+            }
+        }else if(alterCabin == true){
+            check = false;
+            clickedNext = 5;
+            addClicked = clickedNext;
+            txtStory.setText(listStory.get(clickedNext));
+            MakeOptFalse();
+        }
+
+        //Get the Choices for the User
+        if(check == true){
+            alterCabin = false;
+            MakeOptTrue();
+            MakeOptions();
+
+        }
+        System.out.print(" " + addClicked + " CHECK: " + check);
+
+    }//GEN-LAST:event_txtStoryMouseClicked
+
+     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(img, 0, 0, this); 
+        
+        //Put image somewhere else if Window gets big
+        if(jFrame.getWidth() > 500 && jFrame.getHeight() > 500){
+            g.drawImage(img, 10, 70, this);
+        }else{
+            g.drawImage(img, 0, 0, this);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton firstOption;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel optionsPanel;
     private javax.swing.JButton secondOption;
+    private javax.swing.JPanel storyPanel;
     private javax.swing.JButton thirdOption;
+    private javax.swing.JPanel topPanel;
     private javax.swing.JTextField txtOfOptions;
     private javax.swing.JTextArea txtStory;
     // End of variables declaration//GEN-END:variables
